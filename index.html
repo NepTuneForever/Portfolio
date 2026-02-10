@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neptune | Developer Portfolio</title>
+
+  <link rel="stylesheet" href="src/CSS/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Fundo galáctico -->
+  <div class="galaxy"></div>
+
+  <!-- Navegação -->
+  <nav class="nav">
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('projects')">Projects</button>
+    <button onclick="showPage('payment')">Payment</button>
+    <button onclick="showPage('stack')">Stack</button>
+    <button onclick="showPage('testimonials')">Testimonials</button>
+    <button onclick="showPage('certificates')">Certificates</button>
+    <button onclick="showPage('contact')">Contact</button>
+  </nav>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="page flex-center">
+      <h1 class="title">Neptune</h1>
+      <p class="subtitle">FullStack Programmer & Software Engineer</p>
+      <p class="description">Scroll Down ↓</p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="page hidden">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="grid-projects">
+          <div class="card">
+            <video src="src/Videos/website.mp4" autoplay muted loop></video>
+            <div class="card-body">
+              <h3>Neptune's Portfolio</h3>
+              <p>Portfolio focused on showcasing my projects and skills.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <video src="src/Videos/teste.mp4" autoplay muted loop></video>
+            <div class="card-body">
+              <h3>Aura Farming Simulator</h3>
+              <p>Roblox game focused on progression, aura farming and effects.</p>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- PAYMENT -->
+    <section id="payment" class="page hidden">
+      <div class="container">
+        <h2 class="section-title">Payment Methods</h2>
+
+        <div class="grid-projects">
+          <div class="payment-card">
+              <h3 class="payment-type">Long Term</h3>
+              <p class="payment-value">$9/h</p>
+          </div>
+
+          <div class="payment-card">
+              <h3 class="payment-type">Short Term</h3>
+              <p class="payment-value">$12/h</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="page hidden">
+      <div class="container">
+        <h2 class="section-title">Tech Stack</h2>
+
+        <div class="grid-projects">
+          <div class="card">JavaScript</div>
+          <div class="card">Python</div>
+          <div class="card">Lua</div>
+          <div class="card">C++</div>
+          <div class="card">Node.js</div>
+          <div class="card">Roblox Studio</div>
+          <div class="card">HTML & CSS</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="page hidden">
+      <div class="container">
+        <h2 class="section-title">Testimonials</h2>
+
+        <div class="grid-testimonials">
+          <div class="testimonial">
+            <img src="person1.jpg" alt="Profile photo">
+            <h3>John Doe</h3>
+            <span>Client</span>
+            <p>Felps delivered an insanely polished system, fast and extremely well structured.</p>
+          </div>
+
+          <div class="testimonial">
+            <img src="person2.jpg" alt="Profile photo">
+            <h3>Jane Smith</h3>
+            <span>Partner</span>
+            <p>One of the most creative developers I’ve worked with in game systems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates" class="page hidden">
+      <div class="container">
+        <h2 class="section-title">Certificates</h2>
+
+        <div class="grid-certificates">
+            <div class="certificate">
+                <img src="src/Fotos/harvard.png" alt="Certificate">
+                <p>Computer Science Fundamentals</p>
+         </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="page hidden flex-center">
+      <h2 class="section-title">Contact</h2>
+      <p class="contact-text">Let’s build something insane together.</p>
+
+      <div class="contact-links">
+        <a href="https://github.com/NepTuneForever" target="_blank">GitHub</a>
+        <a href="https://nepforever.cloud" target="_blank">Website</a>
+        <a href="mailto:contact@nepforever.cloud">Email</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="watermark">
+        <p>© Neptune | 2026</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="src/Script/script.js"></script>
+</body>
+</html>
