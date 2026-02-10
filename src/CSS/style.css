@@ -213,7 +213,6 @@ main {
   color: #cbd5f5;
 }
 
-
 @media (max-width: 900px) {
   .grid-projects {
     grid-template-columns: 1fr;
