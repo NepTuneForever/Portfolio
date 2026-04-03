@@ -3,255 +3,450 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <meta property="og:title" content="Neptune">
   <meta property="og:description" content="Fullstack Developer • Backend • Game Systems">
   <meta property="og:image" content="/src/Fotos/icon.png">
   <meta property="og:url" content="https://nepdev.xyz/">
   <meta property="og:type" content="website">
-
-  <meta name="theme-color" content="#FFD700">
-  
-  <title>Neptune | Developer Portfolio</title>
-  <link rel="icon" href="src/Fotos/icon.png" type="image/png>" />
-  <link rel="stylesheet" href="src/CSS/style.css" />
+  <meta name="theme-color" content="#74ffd9">
+  <title>Neptune | System Ready</title>
+  <link rel="icon" href="src/Fotos/icon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/CSS/style.css" />
 </head>
-
 <body>
-  <!-- Fundo galáctico -->
-  <div class="galaxy"></div>
+  <div class="intro-screen" aria-hidden="true">
+    <div class="intro-window">
+      <div class="window-bar">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <p>boot://neptune.system/init</p>
+      </div>
+      <div class="intro-terminal">
+        <p><span class="prompt">neptune@boot</span> $ initialize modules</p>
+        <p class="intro-line">loading portfolio kernel...</p>
+        <p class="intro-line">projects indexed</p>
+        <p class="intro-line">certificates verified</p>
+        <p class="intro-line">pricing matrix loaded</p>
+        <p class="intro-line">contact endpoints exposed</p>
+        <p class="intro-line intro-ready">system ready</p>
+      </div>
+    </div>
+  </div>
 
-  <!-- Navegação -->
-  <nav class="nav">
-    <button onclick="showPage('home')">Home</button>
-    <button onclick="showPage('projects')">Projects</button>
-    <button onclick="showPage('payment')">Payment</button>
-    <button onclick="showPage('stack')">Stack</button>
-    <button onclick="showPage('testimonials')">Testimonials</button>
-    <button onclick="showPage('certificates')">Certificates</button>
-    <button onclick="showPage('contact')">Contact</button>
-  </nav>
+  <div class="background-stack">
+    <div class="bg-base"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-orbit"></div>
+    <div class="bg-scanlines"></div>
+    <div class="bg-noise"></div>
+  </div>
 
-  <main>
-    <!-- HOME -->
-    <section id="home" class="page flex-center">
-      <h1 class="title">Neptune</h1>
-      <p class="subtitle">FullStack Programmer & Software Engineer</p>
-      <p class="description">Scroll Down ↓</p>
-    </section>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="page hidden">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Go to home">
+        <span class="brand-mark">N</span>
+        <span class="brand-copy">
+          <strong>Neptune</strong>
+          <small>fullstack programmer &amp; software engineer</small>
+        </span>
+      </a>
 
-        <div class="grid-projects">
-          <div class="card">
-            <video src="src/Videos/website.mp4" autoplay muted loop></video>
-            <div class="card-body">
+      <nav class="top-nav" id="site-nav" aria-label="Main navigation">
+        <a href="#home">home</a>
+        <a href="#systems">systems</a>
+        <a href="#projects">projects</a>
+        <a href="#proof">proof</a>
+        <a href="#contact">contact</a>
+      </nav>
+
+      <div class="topbar-status">
+        <span class="status-dot"></span>
+        <span>online</span>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <section id="home" class="hero-grid section">
+        <article class="hero-main terminal-window reveal">
+          <div class="window-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <p>root://neptune/overview</p>
+          </div>
+          <div class="hero-body">
+            <div class="hero-kicker">
+              <span class="panel-label">Root Session</span>
+              <span class="hero-badge">Linux / Cyber / Systems</span>
+            </div>
+            <h1>Fullstack systems with a terminal mind and a sharp surface.</h1>
+            <p class="hero-text">
+              I build backend systems, products, support tools, dashboards and game logic with the kind of structure that
+              survives pressure and the kind of presentation that does not look copied from the internet.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects">inspect projects</a>
+              <a class="button button-secondary" href="#contact">open contact</a>
+            </div>
+
+            <div class="command-line">
+              <p><span class="prompt">neptune@root</span> # whoami</p>
+              <p class="typed-line">backend / automation / dashboards / roblox systems / cibersecurity</p>
+            </div>
+          </div>
+        </article>
+
+        <aside class="hero-side reveal">
+          <article class="system-card">
+            <p class="panel-label">Identity Map</p>
+            <div class="system-list">
+              <div>
+                <span>codename</span>
+                <strong>Neptune</strong>
+              </div>
+              <div>
+                <span>role</span>
+                <strong>FullStack Programmer &amp; Software Engineer</strong>
+              </div>
+              <div>
+                <span>focus</span>
+                <strong>APIs, automation, dashboards, game systems</strong>
+              </div>
+              <div>
+                <span>style</span>
+                <strong>Fast, polished, built to last</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="metrics-card">
+            <p class="panel-label">Live Metrics</p>
+            <div class="metrics-grid">
+              <div><strong>09</strong><span>highlighted builds</span></div>
+              <div><strong>18</strong><span>technologies listed</span></div>
+              <div><strong>02</strong><span>certificates shown</span></div>
+              <div><strong>24/7</strong><span>signal active</span></div>
+            </div>
+          </article>
+        </aside>
+      </section>
+
+      <section id="systems" class="systems-grid section">
+        <article class="about-panel panel reveal">
+          <div class="section-heading">
+            <p class="panel-label">About / Manifest</p>
+            <h2>I turn raw ideas into systems people can actually use, fund and come back to.</h2>
+          </div>
+          <p>
+            The portfolio covers product builds, adoption tech, calculators, APIs, support systems and Roblox scripting.
+            Different domains, same standard: make it efficient, make it memorable, make it work under pressure.
+          </p>
+          <p>
+            The goal is not another polished rectangle. It is a real interface with intent, backed by code that stays clean
+            when the project grows.
+          </p>
+        </article>
+
+        <article class="rates-panel terminal-window reveal">
+          <div class="window-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <p>billing://rates</p>
+          </div>
+          <div class="rates-body">
+            <div class="rate-block">
+              <span class="rate-label">Long Term</span>
+              <strong>$13<span>/h</span></strong>
+              <p>Ideal for ongoing systems, continuous iteration and larger technical scopes.</p>
+            </div>
+            <div class="rate-block">
+              <span class="rate-label">Short Term</span>
+              <strong>$17<span>/h</span></strong>
+              <p>Best for tight deadlines, urgent fixes and focused high-speed implementation.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="stack-panel panel reveal">
+          <div class="section-heading">
+            <p class="panel-label">Skill Matrix</p>
+            <h2>Languages and tools I use when it has to ship right.</h2>
+          </div>
+          <div class="stack-grid">
+            <span>JavaScript</span>
+            <span>Python</span>
+            <span>Lua</span>
+            <span>Argon</span>
+            <span>Node.js</span>
+            <span>PHP</span>
+            <span>TypeScript</span>
+            <span>Tailwind</span>
+            <span>React</span>
+            <span>MySQL</span>
+            <span>MongoDB</span>
+            <span>API</span>
+            <span>Rojo</span>
+            <span>Next</span>
+            <span>Prisma</span>
+            <span>Docker</span>
+            <span>GIT</span>
+            <span>HTML &amp; CSS</span>
+            <span>CiberSecurity</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="projects" class="projects-panel section reveal">
+        <div class="section-heading">
+          <p class="panel-label">Indexed Projects</p>
+          <h2>Real work across product, backend and game systems.</h2>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card featured-card">
+            <div class="project-video">
+              <video src="src/Videos/website.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <div class="project-copy">
+              <div class="project-meta">
+                <span>featured</span>
+                <span>portfolio</span>
+              </div>
               <h3>Neptune's Portfolio</h3>
               <p>Portfolio focused on showcasing my projects and skills.</p>
             </div>
-          </div>
+          </article>
 
-          <div class="card">
-            <video src="src/Videos/resgatepet.mp4" autoplay muted loop></video>
-            <div class="card-body">
+          <article class="project-card">
+            <div class="project-video">
+              <video src="src/Videos/resgatepet.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <div class="project-copy">
+              <div class="project-meta">
+                <span>social impact</span>
+                <span>platform</span>
+              </div>
               <h3>Resgate Pet</h3>
               <p>
                 Pet Rescue Website built with modern technologies to streamline and simplify the animal adoption process.
                 The platform connects shelters, NGOs, and adopters, enabling efficient pet listings, filtering, and direct
-                contact for adoption. Focused on accessibility, scalability, and real impact, helping reduce abandonment 
+                contact for adoption. Focused on accessibility, scalability, and real impact, helping reduce abandonment
                 and increase successful adoptions.
               </p>
             </div>
-          </div>
+          </article>
 
-          <div class="card">
-            <video src="src/Videos/Anime Fighting Simulator.mp4" autoplay muted loop></video>
-            <div class="card-body">
+          <article class="project-card">
+            <div class="project-video">
+              <video src="src/Videos/Anime Fighting Simulator.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <div class="project-copy">
+              <div class="project-meta">
+                <span>game system</span>
+                <span>roblox</span>
+              </div>
               <h3>Anime Fighting Simulator</h3>
               <p>Skills training system for Anime Fighting Simulator.</p>
             </div>
-          </div>
+          </article>
 
-          <div class="card">
-            <video src="src/Videos/Hatch and Merge.mp4" autoplay muted loop></video>
-            <div class="card-body">
+          <article class="project-card">
+            <div class="project-video">
+              <video src="src/Videos/Hatch and Merge.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <div class="project-copy">
+              <div class="project-meta">
+                <span>optimization</span>
+                <span>gameplay</span>
+              </div>
               <h3>Hatch and Merge Brainrots</h3>
               <p>Cashgrab game fully scripted by me, using modern tech stacks with low memory usage (1gb).</p>
             </div>
-          </div>
+          </article>
 
-          <div class="card">
-            <video src="src/Videos/Tickets.mp4" autoplay muted loop></video>
-            <div class="card-body">
+          <article class="project-card">
+            <div class="project-video">
+              <video src="src/Videos/Tickets.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <div class="project-copy">
+              <div class="project-meta">
+                <span>support platform</span>
+                <span>python</span>
+              </div>
               <h3>Tickets Service</h3>
               <p>Ticket Service using Python and JSON communication, with Client and Admin Panels.</p>
             </div>
-          </div>
+          </article>
 
-          <div class="card">
-            <video src="src/Videos/Steal Brainrots from Streamers.mp4" autoplay muted loop></video>
-            <div class="card-body">
+          <article class="project-card">
+            <div class="project-video">
+              <video src="src/Videos/Steal Brainrots from Streamers.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <div class="project-copy">
+              <div class="project-meta">
+                <span>gameplay loop</span>
+                <span>progression</span>
+              </div>
               <h3>Steal Brainrots from Streamers</h3>
-              <p>Brainrot Game focused on stealing brainrots from streamers, 
-                being possible to upgrade player speed and unlock new streamers bases.</p>
+              <p>
+                Brainrot Game focused on stealing brainrots from streamers, being possible to upgrade player speed
+                and unlock new streamers bases.
+              </p>
             </div>
-          </div>
-          
-          <div class="card">
-            <video src="src/Videos/cripto.mp4" autoplay muted loop></video>
-            <div class="card-body">
-              <h3>Online Cripto Calculator</h3>
-              <p>Online Cripto Currency Calculator, using gecko API to provid updated data in real time, also, using GET and POST methods.</p>
-            </div>
-          </div>
-          
-          <div class="card">
-            <video src="src/Videos/Combat System.mp4" autoplay muted loop></video>
-            <div class="card-body">
-              <h3>Combat System</h3>
-              <p>Parry-based Combat System for BattleGround games, using modern tech stacks as BridgeNet2 and 
-                Leif DataStore.</p>
-            </div>
-          </div>
+          </article>
 
-          <div class="card">
-            <video src="src/Videos/DjangoAPI.mp4" autoplay muted loop></video>
-            <div class="card-body">
+          <article class="project-card">
+            <div class="project-video">
+              <video src="src/Videos/cripto.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <div class="project-copy">
+              <div class="project-meta">
+                <span>realtime data</span>
+                <span>utility</span>
+              </div>
+              <h3>Online Cripto Calculator</h3>
+              <p>
+                Online Cripto Currency Calculator, using gecko API to provid updated data in real time, also, using GET and POST methods.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-video">
+              <video src="src/Videos/Combat System.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <div class="project-copy">
+              <div class="project-meta">
+                <span>combat layer</span>
+                <span>pvp</span>
+              </div>
+              <h3>Combat System</h3>
+              <p>
+                Parry-based Combat System for BattleGround games, using modern tech stacks as BridgeNet2 and Leif DataStore.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-video">
+              <video src="src/Videos/DjangoAPI.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <div class="project-copy">
+              <div class="project-meta">
+                <span>api</span>
+                <span>django</span>
+              </div>
               <h3>Cripto Dashboard</h3>
               <p>RESTful API built with Django, providing seamless integration with modern frontend applications.</p>
             </div>
-          </div>
-
+          </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- PAYMENT -->
-    <section id="payment" class="page hidden">
-      <div class="container">
-        <h2 class="section-title">Payment Methods</h2>
-
-        <div class="grid-projects">
-          <div class="payment-card">
-              <h3 class="payment-type">Long Term</h3>
-              <p class="payment-value">$13/h</p>
+      <section id="proof" class="proof-grid section">
+        <article class="proof-panel panel reveal">
+          <div class="section-heading">
+            <p class="panel-label">Signal / Testimonials</p>
+            <h2>What people say after the work is delivered.</h2>
           </div>
-
-          <div class="payment-card">
-              <h3 class="payment-type">Short Term</h3>
-              <p class="payment-value">$17/h</p>
+          <div class="testimonial-grid">
+            <article class="testimonial-card">
+              <img src="src/Fotos/kartz.png" alt="Profile photo of Kartz">
+              <div>
+                <h3>Kartz</h3>
+                <span>Partner</span>
+                <p>"Neptune delivered an insanely polished system, fast and extremely well structured."</p>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <img src="src/Fotos/raijin..png" alt="Profile photo of Raijin">
+              <div>
+                <h3>Raijin</h3>
+                <span>Client</span>
+                <p>"Very good work, did the work pretty quickly even though he wasn't on his main setup/equipment."</p>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <img src="src/Fotos/society.png" alt="Profile photo of Society">
+              <div>
+                <h3>Society</h3>
+                <span>Client</span>
+                <p>"Very good, quick stating hes not in his main work setup i would def recommend to new customers"</p>
+              </div>
+            </article>
           </div>
-        </div>
+        </article>
 
-      </div>
-    </section>
-
-    <!-- STACK -->
-    <section id="stack" class="page hidden">
-      <div class="container">
-        <h2 class="section-title">Tech Stack</h2>
-
-        <div class="grid-projects">
-          <div class="card">JavaScript</div>
-          <div class="card">Python</div>
-          <div class="card">Lua</div>
-          <div class="card">Argon</div>
-          <div class="card">Node.js</div>
-          <div class="card">PHP</div>
-          <div class="card">TypeScript</div>
-          <div class="card">Tailwind</div>
-          <div class="card">React</div>
-          <div class="card">MySQL</div>
-          <div class="card">MongoDB</div>
-          <div class="card">API</div>
-          <div class="card">Rojo</div>
-          <div class="card">Next</div>
-          <div class="card">Prisma</div>
-          <div class="card">Docker</div>
-          <div class="card">GIT</div>
-          <div class="card">HTML & CSS</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="page hidden">
-      <div class="container">
-        <h2 class="section-title">Testimonials</h2>
-
-        <div class="grid-testimonials">
-          <div class="testimonial">
-            <img src="src/Fotos/kartz.png" alt="Profile photo">
-            <h3>Kartz</h3>
-            <span>Partner</span>
-            <p>"Neptune delivered an insanely polished system, fast and extremely well structured."</p>
+        <article class="terminal-window validation-panel reveal">
+          <div class="window-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <p>validation://certificates</p>
           </div>
-
-          <div class="testimonial">
-            <img src="src/Fotos/raijin..png" alt="Profile photo">
-            <h3>Raijin</h3>
-            <span>Client</span>
-            <p>"Very good work, did the work pretty quickly even though he wasn't on his main setup/equipment."</p>
-          </div>
-        </div>
-
-        <div class="testimonial">
-            <img src="src/Fotos/society.png" alt="Profile photo">
-            <h3>Society</h3>
-            <span>Client</span>
-            <p>"Very good, quick stating hes not in his main work setup i would def recommend to new customers "</p>
-          </div>
-        </div>
-
-
-
-      </div>
-    </section>
-
-    <!-- CERTIFICATES -->
-    <section id="certificates" class="page hidden">
-      <div class="container">
-        <h2 class="section-title">Certificates</h2>
-
-        <div class="grid-certificates">
-            <div class="certificate">
-                <img src="src/Fotos/harvard.png" alt="Certificate">
+          <div class="validation-body">
+            <div class="section-heading">
+              <p class="panel-label">Certificates</p>
+              <h2>Proof of study on top of practical execution.</h2>
+            </div>
+            <div class="certificate-grid">
+              <article class="certificate-card">
+                <img src="src/Fotos/harvard.png" alt="Harvard computer science certificate">
                 <p>Computer Science - Harvard</p>
-         </div>
-      </div>
+              </article>
 
-      <div class="grid-certificates">
-            <div class="certificate">
-                <img src="src/Fotos/PHub.png" alt="Certificate">
+              <article class="certificate-card">
+                <img src="src/Fotos/PHub.png" alt="Programming Hub ethical hacking certificate">
                 <p>Ethical Hacking - Programmming Hub</p>
-         </div>
-      </div>
-    </section>
+              </article>
+            </div>
+          </div>
+        </article>
+      </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="page hidden flex-center">
-      <h2 class="section-title">Contact</h2>
-      <p class="contact-text">Let’s build something insane together.</p>
+      <section id="contact" class="contact-panel terminal-window section reveal">
+        <div class="window-bar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <p>network://contact-relay</p>
+        </div>
+        <div class="contact-body">
+          <div class="contact-copy">
+            <p class="panel-label">Contact</p>
+            <h2>Want something sharp, fast and built properly?</h2>
+            <p>Open a channel. If the project is serious, I am interested.</p>
+            <div class="contact-terminal">
+              <p><span class="prompt">neptune@root</span> $ ping serious-project</p>
+              <p class="typed-line">response :: ready to connect</p>
+            </div>
+          </div>
 
-      <div class="contact-links">
-        <a href="https://github.com/NepTuneForever" target="_blank">GitHub</a>
-        <a href="https://nepdev.xyz" target="_blank">Website</a>
-        <a href="https://discord.gg/kgPPkT78">Discord Server</a>
-      </div>
-    </section>
+          <div class="contact-links">
+            <a href="https://github.com/NepTuneForever" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://nepdev.xyz" target="_blank" rel="noreferrer">Website</a>
+            <a href="https://discord.gg/kgPPkT78" target="_blank" rel="noreferrer">Discord Server</a>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="footer">
-      <div class="watermark">
-        <p>© Neptune | 2026</p>
-      </div>
+      <p>© Neptune | 2026</p>
     </footer>
-  </main>
+  </div>
 
   <script src="src/Script/script.js"></script>
 </body>

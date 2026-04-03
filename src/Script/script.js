@@ -1,75 +1,173 @@
-/* ===============================
-   GALAXY PARTICLES (BACKGROUND)
-================================ */
+document.body.classList.add("is-loading");
 
-const canvas = document.createElement("canvas")
-canvas.style.position = "fixed"
-canvas.style.inset = "0"
-canvas.style.zIndex = "-2"
+const root = document.documentElement;
+const canvas = document.createElement("canvas");
+canvas.className = "starfield";
+document.body.appendChild(canvas);
 
-document.body.appendChild(canvas)
+const ctx = canvas.getContext("2d");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+let width = 0;
+let height = 0;
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
 
-const ctx = canvas.getContext("2d")
+const stars = Array.from({ length: 135 }, () => ({
+  x: Math.random() * window.innerWidth,
+  y: Math.random() * window.innerHeight,
+  radius: Math.random() * 1.7 + 0.4,
+  speedX: (Math.random() - 0.5) * 0.18,
+  speedY: (Math.random() - 0.5) * 0.18,
+  opacity: Math.random() * 0.7 + 0.18,
+}));
 
-let w, h
-function resize() {
-  w = canvas.width = window.innerWidth
-  h = canvas.height = window.innerHeight
-}
-window.addEventListener("resize", resize)
-resize()
-
-const particles = Array.from({ length: 120 }, () => ({
-  x: Math.random() * w,
-  y: Math.random() * h,
-  r: Math.random() * 1.5 + 0.5,
-  vx: (Math.random() - 0.5) * 0.2,
-  vy: (Math.random() - 0.5) * 0.2,
-  o: Math.random()
-}))
-
-function drawParticles() {
-  ctx.clearRect(0, 0, w, h)
-
-  particles.forEach(p => {
-    p.x += p.vx
-    p.y += p.vy
-
-    if (p.x < 0) p.x = w
-    if (p.x > w) p.x = 0
-    if (p.y < 0) p.y = h
-    if (p.y > h) p.y = 0
-
-    ctx.beginPath()
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-    ctx.fillStyle = `rgba(180,120,255,${p.o})`
-    ctx.fill()
-  })
-
-  requestAnimationFrame(drawParticles)
+function resizeCanvas() {
+  width = canvas.width = window.innerWidth;
+  height = canvas.height = window.innerHeight;
 }
 
-drawParticles()
+function updateMousePosition(x, y) {
+  mouseX = x;
+  mouseY = y;
+  root.style.setProperty("--mouse-x", `${x}px`);
+  root.style.setProperty("--mouse-y", `${y}px`);
+}
 
-/* ===============================
-   PAGE NAVIGATION
-================================ */
+function drawConnections() {
+  for (let i = 0; i < stars.length; i += 1) {
+    const a = stars[i];
+    const mouseDistance = Math.hypot(a.x - mouseX, a.y - mouseY);
 
-const pages = document.querySelectorAll(".page")
+    if (mouseDistance < 150) {
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(mouseX, mouseY);
+      ctx.strokeStyle = `rgba(116, 255, 217, ${0.18 - mouseDistance / 1000})`;
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+    }
 
-function showPage(id) {
-  pages.forEach(page => {
-    page.classList.add("hidden")
-  })
+    for (let j = i + 1; j < stars.length; j += 1) {
+      const b = stars[j];
+      const distance = Math.hypot(a.x - b.x, a.y - b.y);
 
-  const target = document.getElementById(id)
-  if (target) {
-    target.classList.remove("hidden")
-
-    target.style.animation = "none"
-    target.offsetHeight
-    target.style.animation = ""
+      if (distance < 96) {
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.strokeStyle = `rgba(106, 148, 255, ${0.13 - distance / 930})`;
+        ctx.lineWidth = 0.6;
+        ctx.stroke();
+      }
+    }
   }
 }
 
-showPage("home")
+function drawStarfield() {
+  ctx.clearRect(0, 0, width, height);
+
+  stars.forEach((star) => {
+    if (!reduceMotion.matches) {
+      const driftX = (mouseX / width - 0.5) * 0.12;
+      const driftY = (mouseY / height - 0.5) * 0.12;
+      star.x += star.speedX + driftX;
+      star.y += star.speedY + driftY;
+    }
+
+    if (star.x < -20) star.x = width + 20;
+    if (star.x > width + 20) star.x = -20;
+    if (star.y < -20) star.y = height + 20;
+    if (star.y > height + 20) star.y = -20;
+
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(216, 255, 243, ${star.opacity})`;
+    ctx.fill();
+  });
+
+  if (!reduceMotion.matches) {
+    drawConnections();
+    requestAnimationFrame(drawStarfield);
+  }
+}
+
+resizeCanvas();
+drawStarfield();
+updateMousePosition(mouseX, mouseY);
+
+window.addEventListener("resize", resizeCanvas);
+window.addEventListener("mousemove", (event) => {
+  updateMousePosition(event.clientX, event.clientY);
+});
+
+window.addEventListener(
+  "touchmove",
+  (event) => {
+    const touch = event.touches[0];
+    if (!touch) return;
+    updateMousePosition(touch.clientX, touch.clientY);
+  },
+  { passive: true }
+);
+
+const toggle = document.querySelector(".nav-toggle");
+const navLinks = [...document.querySelectorAll(".top-nav a")];
+const revealItems = document.querySelectorAll(".reveal");
+const trackedSections = [...document.querySelectorAll("main section[id]")];
+
+if (toggle) {
+  toggle.addEventListener("click", () => {
+    const open = document.body.classList.toggle("nav-open");
+    toggle.setAttribute("aria-expanded", String(open));
+  });
+}
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    document.body.classList.remove("nav-open");
+    toggle?.setAttribute("aria-expanded", "false");
+  });
+});
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
+    });
+  },
+  { threshold: 0.14 }
+);
+
+if (reduceMotion.matches) {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+} else {
+  revealItems.forEach((item) => revealObserver.observe(item));
+}
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      navLinks.forEach((link) => {
+        const active = link.getAttribute("href") === `#${entry.target.id}`;
+        link.classList.toggle("is-active", active);
+      });
+    });
+  },
+  {
+    rootMargin: "-35% 0px -45% 0px",
+    threshold: 0.01,
+  }
+);
+
+trackedSections.forEach((section) => sectionObserver.observe(section));
+
+window.addEventListener("load", () => {
+  window.setTimeout(() => {
+    document.body.classList.remove("is-loading");
+    document.body.classList.add("intro-complete");
+  }, reduceMotion.matches ? 180 : 1900);
+});
