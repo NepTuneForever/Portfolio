@@ -169,5 +169,5 @@ window.addEventListener("load", () => {
   window.setTimeout(() => {
     document.body.classList.remove("is-loading");
     document.body.classList.add("intro-complete");
-  }, reduceMotion.matches ? 180 : 1900);
+  }, reduceMotion.matches ? 30 :  500);
 });

@@ -224,31 +224,31 @@ canvas.starfield {
 .intro-line {
   opacity: 0;
   transform: translateY(8px);
-  animation: bootLine 0.42s ease forwards;
+  animation: bootLine 0.62s ease forwards;
 }
 
 .intro-terminal p:nth-of-type(2) {
-  animation-delay: 0.22s;
+  animation-delay: 0.4s;
 }
 
 .intro-terminal p:nth-of-type(3) {
-  animation-delay: 0.5s;
+  animation-delay: 0.7s;
 }
 
 .intro-terminal p:nth-of-type(4) {
-  animation-delay: 0.78s;
+  animation-delay: 1.0s;
 }
 
 .intro-terminal p:nth-of-type(5) {
-  animation-delay: 1.06s;
+  animation-delay: 1.3s;
 }
 
 .intro-terminal p:nth-of-type(6) {
-  animation-delay: 1.34s;
+  animation-delay: 1.6s;
 }
 
 .intro-terminal p:nth-of-type(7) {
-  animation-delay: 1.62s;
+  animation-delay: 1.9s;
 }
 
 .intro-ready {
