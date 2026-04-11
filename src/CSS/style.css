@@ -668,6 +668,40 @@ canvas.starfield {
   z-index: 1;
 }
 
+.bounded-grid {
+  max-height: min(68vh, 720px);
+  padding-right: 8px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(116, 255, 217, 0.36) transparent;
+}
+
+.bounded-grid-compact {
+  max-height: min(50vh, 420px);
+}
+
+.bounded-grid-tall {
+  max-height: min(76vh, 980px);
+}
+
+.bounded-grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.bounded-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.bounded-grid::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(116, 255, 217, 0.32);
+}
+
+.bounded-grid::-webkit-scrollbar-thumb:hover {
+  background: rgba(116, 255, 217, 0.5);
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -942,6 +976,14 @@ canvas.starfield {
   .rates-body,
   .certificate-grid {
     grid-template-columns: 1fr;
+  }
+
+  .bounded-grid,
+  .bounded-grid-compact,
+  .bounded-grid-tall {
+    max-height: none;
+    padding-right: 0;
+    overflow: visible;
   }
 
   .rate-block + .rate-block {
