@@ -1,5 +1,14 @@
 document.body.classList.add("is-loading");
 
+const INTRO_DURATION_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ? 80
+  : 3800;
+
+window.setTimeout(() => {
+  document.body.classList.remove("is-loading");
+  document.body.classList.add("intro-complete");
+}, INTRO_DURATION_MS);
+
 const root = document.documentElement;
 const canvas = document.createElement("canvas");
 canvas.className = "starfield";
@@ -164,10 +173,3 @@ const sectionObserver = new IntersectionObserver(
 );
 
 trackedSections.forEach((section) => sectionObserver.observe(section));
-
-window.addEventListener("load", () => {
-  window.setTimeout(() => {
-    document.body.classList.remove("is-loading");
-    document.body.classList.add("intro-complete");
-  }, reduceMotion.matches ? 30 :  500);
-});
