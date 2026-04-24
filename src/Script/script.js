@@ -173,3 +173,172 @@ const sectionObserver = new IntersectionObserver(
 );
 
 trackedSections.forEach((section) => sectionObserver.observe(section));
+
+const projectCards = [...document.querySelectorAll(".project-card")];
+const projectViewer = document.querySelector(".project-viewer");
+const projectViewerDialog = document.querySelector(".project-viewer-dialog");
+const projectViewerTitle = document.querySelector("#project-viewer-title");
+const projectViewerMeta = document.querySelector(".project-viewer-meta");
+const projectViewerDescription = document.querySelector(".project-viewer-description");
+const projectViewerVideo = document.querySelector(".project-viewer-video");
+const projectViewerCloseButtons = [...document.querySelectorAll("[data-viewer-close]")];
+const projectPlayerToggle = document.querySelector(".project-player-toggle");
+const projectPlayerProgress = document.querySelector(".project-player-progress");
+const projectPlayerFullscreen = document.querySelector(".project-player-fullscreen");
+
+let activeProjectButton = null;
+
+function syncPlayerToggleLabel() {
+  if (!projectPlayerToggle || !projectViewerVideo) return;
+  const paused = projectViewerVideo.paused || projectViewerVideo.ended;
+  projectPlayerToggle.textContent = paused ? "play" : "pause";
+  projectPlayerToggle.setAttribute("aria-label", paused ? "Play video" : "Pause video");
+}
+
+function syncFullscreenLabel() {
+  if (!projectPlayerFullscreen || !projectViewerDialog) return;
+  const isFullscreen = document.fullscreenElement === projectViewerDialog;
+  projectPlayerFullscreen.textContent = isFullscreen ? "exit fullscreen" : "fullscreen";
+  projectPlayerFullscreen.setAttribute(
+    "aria-label",
+    isFullscreen ? "Exit fullscreen" : "Enter fullscreen"
+  );
+}
+
+function closeProjectViewer() {
+  if (!projectViewer || !projectViewerVideo) return;
+
+  if (document.fullscreenElement === projectViewerDialog) {
+    document.exitFullscreen().catch(() => {});
+  }
+
+  projectViewer.hidden = true;
+  projectViewer.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("viewer-open");
+  projectViewerVideo.pause();
+  projectViewerVideo.removeAttribute("src");
+  projectViewerVideo.load();
+  projectPlayerProgress.value = "0";
+  syncPlayerToggleLabel();
+  syncFullscreenLabel();
+  activeProjectButton?.focus();
+}
+
+function openProjectViewer(card, triggerButton) {
+  if (
+    !projectViewer ||
+    !projectViewerTitle ||
+    !projectViewerMeta ||
+    !projectViewerDescription ||
+    !projectViewerVideo ||
+    !projectViewerDialog
+  ) {
+    return;
+  }
+
+  const title = card.querySelector("h3")?.textContent?.trim() || "Project";
+  const description = card.querySelector("p")?.textContent?.replace(/\s+/g, " ").trim() || "";
+  const source = card.querySelector("video")?.getAttribute("src") || "";
+  const tags = [...card.querySelectorAll(".project-meta span")].map((tag) => tag.textContent?.trim()).filter(Boolean);
+
+  activeProjectButton = triggerButton;
+  projectViewerTitle.textContent = title;
+  projectViewerDescription.textContent = description;
+  projectViewerMeta.replaceChildren();
+  tags.forEach((tag) => {
+    const badge = document.createElement("span");
+    badge.textContent = tag;
+    projectViewerMeta.appendChild(badge);
+  });
+  projectViewerVideo.src = source;
+  projectViewer.hidden = false;
+  projectViewer.setAttribute("aria-hidden", "false");
+  document.body.classList.add("viewer-open");
+  projectPlayerProgress.value = "0";
+  syncFullscreenLabel();
+
+  projectViewerVideo.currentTime = 0;
+  projectViewerVideo.play().catch(() => {
+    syncPlayerToggleLabel();
+  });
+  syncPlayerToggleLabel();
+  window.setTimeout(() => projectViewerDialog.focus(), 30);
+}
+
+projectCards.forEach((card) => {
+  const playButton = card.querySelector(".project-play-button");
+  if (!playButton) return;
+
+  playButton.addEventListener("click", () => {
+    openProjectViewer(card, playButton);
+  });
+});
+
+projectViewerCloseButtons.forEach((button) => {
+  button.addEventListener("click", closeProjectViewer);
+});
+
+projectViewer?.addEventListener("click", (event) => {
+  if (!(event.target instanceof HTMLElement)) return;
+  if (event.target.hasAttribute("data-viewer-close")) {
+    closeProjectViewer();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && projectViewer && !projectViewer.hidden) {
+    closeProjectViewer();
+  }
+});
+
+projectPlayerToggle?.addEventListener("click", () => {
+  if (!projectViewerVideo) return;
+
+  if (projectViewerVideo.paused) {
+    projectViewerVideo.play().catch(() => {});
+  } else {
+    projectViewerVideo.pause();
+  }
+
+  syncPlayerToggleLabel();
+});
+
+projectViewerVideo?.addEventListener("play", syncPlayerToggleLabel);
+projectViewerVideo?.addEventListener("pause", syncPlayerToggleLabel);
+projectViewerVideo?.addEventListener("ended", syncPlayerToggleLabel);
+
+projectViewerVideo?.addEventListener("timeupdate", () => {
+  if (!projectViewerVideo.duration || !projectPlayerProgress) return;
+  projectPlayerProgress.value = String(
+    Math.round((projectViewerVideo.currentTime / projectViewerVideo.duration) * 1000)
+  );
+});
+
+projectViewerVideo?.addEventListener("loadedmetadata", () => {
+  if (!projectPlayerProgress) return;
+  projectPlayerProgress.value = "0";
+});
+
+projectPlayerProgress?.addEventListener("input", () => {
+  if (!projectViewerVideo.duration) return;
+  const progress = Number(projectPlayerProgress.value) / 1000;
+  projectViewerVideo.currentTime = progress * projectViewerVideo.duration;
+});
+
+projectPlayerFullscreen?.addEventListener("click", async () => {
+  if (!projectViewerDialog) return;
+
+  try {
+    if (document.fullscreenElement === projectViewerDialog) {
+      await document.exitFullscreen();
+    } else {
+      await projectViewerDialog.requestFullscreen();
+    }
+  } catch (error) {
+    console.error(error);
+  }
+
+  syncFullscreenLabel();
+});
+
+document.addEventListener("fullscreenchange", syncFullscreenLabel);
