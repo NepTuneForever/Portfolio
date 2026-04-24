@@ -959,10 +959,57 @@ canvas.starfield {
 }
 
 .testimonial-card {
+  position: relative;
   display: grid;
   grid-template-columns: 72px 1fr;
   gap: 18px;
   align-items: start;
+}
+
+.testimonial-rating {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  display: inline-grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border: 1px solid rgba(116, 255, 217, 0.18);
+  border-radius: 999px;
+  background: rgba(4, 10, 12, 0.88);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+.testimonial-rating strong {
+  display: block;
+  color: var(--primary-strong);
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.testimonial-rating-stars {
+  position: relative;
+  display: inline-block;
+  font-size: 0.82rem;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  color: rgba(116, 255, 217, 0.16);
+  transform: translateY(-1px);
+}
+
+.testimonial-rating-stars::before,
+.testimonial-rating-stars::after {
+  content: "★★★★★";
+}
+
+.testimonial-rating-stars::after {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc((var(--rating) / 5) * 100%);
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--primary);
 }
 
 .testimonial-card img {
@@ -1215,10 +1262,16 @@ canvas.starfield {
 
   .testimonial-card {
     grid-template-columns: 1fr;
+    padding-top: 72px;
   }
 
   .testimonial-card img {
     margin: 0 auto;
+  }
+
+  .testimonial-rating {
+    left: 20px;
+    right: auto;
   }
 
   .brand-copy small {
