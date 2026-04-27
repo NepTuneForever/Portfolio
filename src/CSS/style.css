@@ -777,7 +777,12 @@ canvas.starfield {
 }
 
 .project-copy p {
-  display: none;
+  display: block;
+  margin: 14px 0 0;
+  color: var(--text-soft);
+  font-size: 1.08rem;
+  line-height: 1.75;
+  max-width: 42ch;
 }
 
 .project-play-button,
@@ -935,7 +940,9 @@ canvas.starfield {
 .project-viewer-description {
   display: block;
   color: var(--text-soft);
-  line-height: 1.7;
+  font-size: 1.04rem;
+  line-height: 1.85;
+  max-width: 46ch;
 }
 
 .proof-grid {
@@ -966,12 +973,75 @@ canvas.starfield {
   align-items: start;
 }
 
+.testimonial-card-featured {
+  border-color: rgba(116, 255, 217, 0.24);
+  background:
+    radial-gradient(circle at top left, rgba(116, 255, 217, 0.1), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 26%),
+    var(--bg-card);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card-featured::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, rgba(116, 255, 217, 0.95), rgba(116, 255, 217, 0.2));
+}
+
+.testimonial-pin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border: 1px solid rgba(116, 255, 217, 0.22);
+  border-radius: 999px;
+  background: rgba(4, 10, 12, 0.94);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  width: fit-content;
+}
+
+.testimonial-pin-badge strong {
+  color: var(--primary-strong);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.testimonial-pin-icon {
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 35% 35%, rgba(194, 255, 240, 0.95), rgba(116, 255, 217, 0.9));
+  box-shadow: 0 0 0 1px rgba(116, 255, 217, 0.2);
+  margin-top: 1px;
+}
+
+.testimonial-pin-icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(4, 10, 12, 0.56);
+  transform: translate(-50%, -20%);
+}
+
 .testimonial-rating {
   position: absolute;
   top: 18px;
   right: 20px;
-  display: inline-grid;
-  grid-auto-flow: column;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   padding: 7px 10px;
@@ -982,7 +1052,8 @@ canvas.starfield {
 }
 
 .testimonial-rating strong {
-  display: block;
+  display: inline-flex;
+  align-items: center;
   color: var(--primary-strong);
   font-size: 0.8rem;
   line-height: 1;
@@ -990,12 +1061,13 @@ canvas.starfield {
 
 .testimonial-rating-stars {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-size: 0.82rem;
   line-height: 1;
   letter-spacing: 0.12em;
   color: rgba(116, 255, 217, 0.16);
-  transform: translateY(-1px);
+  margin-top: 1px;
 }
 
 .testimonial-rating-stars::before,
