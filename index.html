@@ -26,13 +26,13 @@
         <p>boot://neptune.system/init</p>
       </div>
       <div class="intro-terminal">
-        <p><span class="prompt">neptune@boot~$</span> initialize visual intro</p>
-        <p class="intro-line"><span class="prompt">neptune@boot~$</span> staging interface layers...</p>
-        <p class="intro-line"><span class="prompt">neptune@boot~$</span> syncing product cases</p>
-        <p class="intro-line"><span class="prompt">neptune@boot~$</span> routing Videos</p>
-        <p class="intro-line"><span class="prompt">neptune@boot~$</span> mounting fullstack stack</p>
-        <p class="intro-line"><span class="prompt">neptune@boot~$</span> unlocking contact relay</p>
-        <p class="intro-line intro-ready"><span class="prompt">neptune@boot~$</span> process done</p>
+        <p data-i18n-html="intro.line1"><span class="prompt">neptune@boot~$</span> initialize visual intro</p>
+        <p class="intro-line" data-i18n-html="intro.line2"><span class="prompt">neptune@boot~$</span> staging interface layers...</p>
+        <p class="intro-line" data-i18n-html="intro.line3"><span class="prompt">neptune@boot~$</span> syncing product cases</p>
+        <p class="intro-line" data-i18n-html="intro.line4"><span class="prompt">neptune@boot~$</span> routing Videos</p>
+        <p class="intro-line" data-i18n-html="intro.line5"><span class="prompt">neptune@boot~$</span> mounting fullstack stack</p>
+        <p class="intro-line" data-i18n-html="intro.line6"><span class="prompt">neptune@boot~$</span> unlocking contact relay</p>
+        <p class="intro-line intro-ready" data-i18n-html="intro.line7"><span class="prompt">neptune@boot~$</span> process done</p>
       </div>
     </div>
   </div>
@@ -62,16 +62,20 @@
       </a>
 
       <nav class="top-nav" id="site-nav" aria-label="Main navigation">
-        <a href="#home">home</a>
-        <a href="#systems">systems</a>
-        <a href="#projects">projects</a>
-        <a href="#proof">proof</a>
-        <a href="#contact">contact</a>
+        <a href="#home" data-i18n="nav.home">home</a>
+        <a href="#systems" data-i18n="nav.systems">systems</a>
+        <a href="#projects" data-i18n="nav.projects">projects</a>
+        <a href="#proof" data-i18n="nav.proof">proof</a>
+        <a href="#contact" data-i18n="nav.contact">contact</a>
       </nav>
 
-      <div class="topbar-status">
-        <span class="status-dot"></span>
-        <span>online</span>
+      <div class="topbar-actions">
+        <button class="topbar-button" type="button" id="language-open" data-i18n="topbar.language">language</button>
+        <button class="topbar-button" type="button" id="profile-open" data-i18n="topbar.profile">about me</button>
+        <div class="topbar-status">
+          <span class="status-dot"></span>
+          <span data-i18n="topbar.online">online</span>
+        </div>
       </div>
     </header>
 
@@ -86,57 +90,57 @@
           </div>
           <div class="hero-body">
             <div class="hero-kicker">
-              <span class="panel-label">Root Session</span>
-              <span class="hero-badge">Fullstack / AI / Systems</span>
+              <span class="panel-label" data-i18n="hero.kicker">Root Session</span>
+              <span class="hero-badge" data-i18n="hero.badge">Fullstack / AI / Systems</span>
             </div>
-            <h1>I build websites, systems, and AI tools;</h1>
-            <p class="hero-text">
+            <h1 data-i18n="hero.title">I build websites, systems, and AI tools;</h1>
+            <p class="hero-text" data-i18n="hero.text">
               I work on APIs, dashboards, automations, internal tools, and game systems.
               The goal is simple: build something useful and make it run well.
             </p>
 
             <div class="hero-actions">
-              <a class="button button-primary" href="#projects">inspect projects</a>
-              <a class="button button-secondary" href="#contact">open contact</a>
+              <a class="button button-primary" href="#projects" data-i18n="hero.primaryCta">inspect projects</a>
+              <a class="button button-secondary" href="#contact" data-i18n="hero.secondaryCta">open contact</a>
             </div>
 
             <div class="command-line">
               <p><span class="prompt">neptune@boot~$</span> # whoami</p>
-              <p class="typed-line">fullstack developer / ai tools / automations / game systems</p>
+              <p class="typed-line" data-i18n="hero.typed">fullstack developer / ai tools / automations / game systems</p>
             </div>
           </div>
         </article>
 
         <aside class="hero-side reveal">
           <article class="system-card">
-            <p class="panel-label">Identity Map</p>
+            <p class="panel-label" data-i18n="identity.label">Identity Map</p>
             <div class="system-list">
               <div>
-                <span>codename</span>
+                <span data-i18n="identity.codenameLabel">codename</span>
                 <strong>Neptune</strong>
               </div>
               <div>
-                <span>role</span>
-                <strong>Fullstack Engineer &amp; AI Engineer</strong>
+                <span data-i18n="identity.roleLabel">role</span>
+                <strong data-i18n="identity.roleValue">Fullstack Engineer &amp; AI Engineer</strong>
               </div>
               <div>
-                <span>focus</span>
-                <strong>Websites, APIs, automations, dashboards, and game systems</strong>
+                <span data-i18n="identity.focusLabel">focus</span>
+                <strong data-i18n="identity.focusValue">Websites, APIs, automations, dashboards, and game systems</strong>
               </div>
               <div>
-                <span>style</span>
-                <strong>Simple, clean, and built to work</strong>
+                <span data-i18n="identity.styleLabel">style</span>
+                <strong data-i18n="identity.styleValue">Simple, clean, and built to work</strong>
               </div>  
             </div>
           </article>
 
           <article class="metrics-card">
-            <p class="panel-label">Live Metrics</p>
+            <p class="panel-label" data-i18n="metrics.label">Live Metrics</p>
             <div class="metrics-grid">
-              <div><strong>09</strong><span>highlighted builds</span></div>
-              <div><strong>20</strong><span>technologies listed</span></div>
-              <div><strong>02</strong><span>certificates shown</span></div>
-              <div><strong>24/7</strong><span>signal active</span></div>
+              <div><strong>09</strong><span data-i18n="metrics.builds">highlighted builds</span></div>
+              <div><strong>20</strong><span data-i18n="metrics.technologies">technologies listed</span></div>
+              <div><strong>02</strong><span data-i18n="metrics.certificates">certificates shown</span></div>
+              <div><strong>24/7</strong><span data-i18n="metrics.signal">signal active</span></div>
             </div>
           </article>
         </aside>
@@ -145,14 +149,14 @@
       <section id="systems" class="systems-grid section">
         <article class="about-panel panel reveal">
           <div class="section-heading">
-            <p class="panel-label">About</p>
-            <h2>I turn ideas into working products and tools;</h2>
+            <p class="panel-label" data-i18n="about.label">About</p>
+            <h2 data-i18n="about.title">I turn ideas into working products and tools;</h2>
           </div>
-          <p>
+          <p data-i18n="about.body1">
             This portfolio includes websites, APIs, dashboards, AI tools, automations, and Roblox systems.
             Different projects, same focus: make it useful, stable, and easy to use.
           </p>
-          <p>
+          <p data-i18n="about.body2">
             I care about clean structure, clear flow, and how the system behaves when people actually start using it.
           </p>
         </article>
@@ -166,22 +170,22 @@
           </div>
           <div class="rates-body">
             <div class="rate-block">
-              <span class="rate-label">Long Term</span>
+              <span class="rate-label" data-i18n="rates.longLabel">Long Term</span>
               <strong>$13<span>/h</span></strong>
-              <p>Ideal for ongoing systems, continuous iteration and larger technical scopes.</p>
+              <p data-i18n="rates.longText">Ideal for ongoing systems, continuous iteration and larger technical scopes.</p>
             </div>
             <div class="rate-block">
-              <span class="rate-label">Short Term</span>
+              <span class="rate-label" data-i18n="rates.shortLabel">Short Term</span>
               <strong>$17<span>/h</span></strong>
-              <p>Best for tight deadlines, urgent fixes and focused high-speed implementation.</p>
+              <p data-i18n="rates.shortText">Best for tight deadlines, urgent fixes and focused high-speed implementation.</p>
             </div>
           </div>
         </article>
 
         <article class="stack-panel panel reveal">
           <div class="section-heading">
-            <p class="panel-label">Skills</p>
-            <h2>Tech Stacks;</h2>
+            <p class="panel-label" data-i18n="stack.label">Skills</p>
+            <h2 data-i18n="stack.title">Tech Stacks;</h2>
           </div>
           <div class="stack-grid bounded-grid bounded-grid-compact">
             <span>JavaScript</span>
@@ -210,23 +214,36 @@
 
       <section id="projects" class="projects-panel section reveal">
           <div class="section-heading">
-            <p class="panel-label">Indexed Projects</p>
-            <h2>Some of the projects I have worked on;</h2>
+            <p class="panel-label" data-i18n="projects.label">Indexed Projects</p>
+            <h2 data-i18n="projects.title">Some of the projects I have worked on;</h2>
           </div>
 
         <div class="projects-grid bounded-grid bounded-grid-tall">
-          <article class="project-card featured-card">
+          <article class="project-card featured-card" data-project="emprestact">
+            <div class="project-video">
+              <video src="src/Videos/emprestact.mp4" preload="metadata" playsinline></video>
+            </div>
+            <div class="project-copy">
+              <div class="project-meta"></div>
+              <div class="project-row">
+                <h3>EmprestaCT</h3>
+                <button class="project-play-button" type="button" aria-label="Play EmprestaCT video">
+                  <span>play</span>
+                </button>
+              </div>
+              <p>
+                Equipment loan management platform created in a university extension project for UFPB,
+                designed to organize internal equipment requests, loan tracking, and returns across the institution.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="rocketleagueAI">
             <div class="project-video">
               <video src="src/Videos/rocketleagueAI.mp4" preload="metadata" playsinline></video>
             </div>
             <div class="project-copy">
-              <div class="project-meta">
-                <span>featured</span>
-                <span>ai engineer</span>
-                <span>ai</span>
-                <span>python</span>
-                <span>nepops</span>
-              </div>
+              <div class="project-meta"></div>
               <div class="project-row">
                 <h3>Rocket League AI Agent</h3>
                 <button class="project-play-button" type="button" aria-label="Play Rocket League AI Agent video">
@@ -240,18 +257,12 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-project="resgatepet">
             <div class="project-video">
               <video src="src/Videos/resgatepet.mp4" preload="metadata" playsinline></video>
             </div>
             <div class="project-copy">
-              <div class="project-meta">
-                <span>social impact</span>
-                <span>website</span>
-                <span>python</span>
-                <span>api</span>
-                <span>django</span>
-              </div>
+              <div class="project-meta"></div>
               <div class="project-row">
                 <h3>Resgate Pet</h3>
                 <button class="project-play-button" type="button" aria-label="Play Resgate Pet video">
@@ -267,16 +278,12 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-project="ollama">
             <div class="project-video">
               <video src="src/Videos/ollama.mp4" preload="metadata" playsinline></video>
             </div>
             <div class="project-copy">
-              <div class="project-meta">
-                <span>ai engineer</span>
-                <span>llm</span>
-                <span>python</span>
-              </div>
+              <div class="project-meta"></div>
               <div class="project-row">
                 <h3>NepAI Agent</h3>
                 <button class="project-play-button" type="button" aria-label="Play NepAI Agent video">
@@ -292,15 +299,12 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-project="website">
             <div class="project-video">
               <video src="src/Videos/website.mp4" preload="metadata" playsinline></video>
             </div>
             <div class="project-copy">
-              <div class="project-meta">
-                <span>featured</span>
-                <span>portfolio</span>
-              </div>
+              <div class="project-meta"></div>
               <div class="project-row">
                 <h3>Neptune's Portfolio</h3>
                 <button class="project-play-button" type="button" aria-label="Play Neptune's Portfolio video">
@@ -314,16 +318,12 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-project="animefighting">
             <div class="project-video">
               <video src="src/Videos/Anime Fighting Simulator.mp4" preload="metadata" playsinline></video>
             </div>
             <div class="project-copy">
-              <div class="project-meta">
-                <span>game system</span>
-                <span>Lua</span>
-                <span>rojo</span>
-              </div>
+              <div class="project-meta"></div>
               <div class="project-row">
                 <h3>Anime Fighting Simulator</h3>
                 <button class="project-play-button" type="button" aria-label="Play Anime Fighting Simulator video">
@@ -337,15 +337,12 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-project="hatchmerge">
             <div class="project-video">
               <video src="src/Videos/Hatch and Merge.mp4" preload="metadata" playsinline></video>
             </div>
             <div class="project-copy">
-              <div class="project-meta">
-                <span>game system</span>
-                <span>Lua</span>
-              </div>
+              <div class="project-meta"></div>
               <div class="project-row">
                 <h3>Hatch and Merge Brainrots</h3>
                 <button class="project-play-button" type="button" aria-label="Play Hatch and Merge Brainrots video">
@@ -359,17 +356,12 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-project="tickets">
             <div class="project-video">
               <video src="src/Videos/Tickets.mp4" preload="metadata" playsinline></video>
             </div>
             <div class="project-copy">
-              <div class="project-meta">
-                <span>support platform</span>
-                <span>python</span>
-                <span>poo</span>
-                <span>django</span>
-              </div>
+              <div class="project-meta"></div>
               <div class="project-row">
                 <h3>Tickets Service</h3>
                 <button class="project-play-button" type="button" aria-label="Play Tickets Service video">
@@ -383,18 +375,12 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-project="cripto">
             <div class="project-video">
               <video src="src/Videos/cripto.mp4" preload="metadata" playsinline></video>
             </div>
             <div class="project-copy">
-              <div class="project-meta">
-                <span>realtime data</span>
-                <span>utility</span>
-                <span>python</span>
-                <span>flask</span>
-                <span>website</span>
-              </div>
+              <div class="project-meta"></div>
               <div class="project-row">
                 <h3>Online Cripto Calculator</h3>
                 <button class="project-play-button" type="button" aria-label="Play Online Cripto Calculator video">
@@ -407,16 +393,12 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-project="combat">
             <div class="project-video">
               <video src="src/Videos/Combat System.mp4" preload="metadata" playsinline></video>
             </div>
             <div class="project-copy">
-              <div class="project-meta">
-                <span>game system</span>
-                <span>lua</span>
-                <span>pvp &amp; pve</span>
-              </div>
+              <div class="project-meta"></div>
               <div class="project-row">
                 <h3>Combat System</h3>
                 <button class="project-play-button" type="button" aria-label="Play Combat System video">
@@ -429,19 +411,12 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-project="djangoapi">
             <div class="project-video">
               <video src="src/Videos/DjangoAPI.mp4" preload="metadata" playsinline></video>
             </div>
             <div class="project-copy">
-              <div class="project-meta">
-                <span>api</span>
-                <span>django</span>
-                <span>python</span>
-                <span>rest</span>
-                <span>postgrees</span>
-                <span>website</span>
-              </div>
+              <div class="project-meta"></div>
               <div class="project-row">
                 <h3>Cripto Dashboard</h3>
                 <button class="project-play-button" type="button" aria-label="Play Cripto Dashboard video">
@@ -455,18 +430,12 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-project="morph">
             <div class="project-video">
               <video src="src/Videos/morph.mp4" preload="metadata" playsinline></video>
             </div>
             <div class="project-copy">
-              <div class="project-meta">
-                <span>roblox</span>
-                <span>game system</span>
-                <span>luau</span>
-                <span>lua</span>
-                <span>fullstack</span>
-              </div>
+              <div class="project-meta"></div>
               <div class="project-row">
                 <h3>Morph System (Armor + Sword)</h3>
                 <button class="project-play-button" type="button" aria-label="Play Morph System (Armor + Sword) video">
@@ -484,18 +453,18 @@
         <div class="project-viewer" hidden aria-hidden="true">
           <div class="project-viewer-backdrop" data-viewer-close></div>
           <div class="project-viewer-dialog" role="dialog" aria-modal="true" aria-labelledby="project-viewer-title" tabindex="-1">
-            <button class="project-viewer-close" type="button" data-viewer-close aria-label="Close project viewer">close</button>
+            <button class="project-viewer-close" type="button" data-viewer-close aria-label="Close project viewer" data-i18n="viewer.close">close</button>
             <div class="project-viewer-grid">
               <div class="project-viewer-media">
                 <video class="project-viewer-video" playsinline preload="metadata"></video>
                 <div class="project-player-bar">
-                  <button class="project-player-toggle" type="button" aria-label="Pause video">pause</button>
+                  <button class="project-player-toggle" type="button" aria-label="Pause video" data-i18n="viewer.pause">pause</button>
                   <input class="project-player-progress" type="range" min="0" max="1000" value="0" step="1" aria-label="Video progress">
-                  <button class="project-player-fullscreen" type="button" aria-label="Enter fullscreen">fullscreen</button>
+                  <button class="project-player-fullscreen" type="button" aria-label="Enter fullscreen" data-i18n="viewer.fullscreen">fullscreen</button>
                 </div>
               </div>
               <div class="project-viewer-copy">
-                <p class="panel-label">Project Playback</p>
+                <p class="panel-label" data-i18n="viewer.label">Project Playback</p>
                 <h3 id="project-viewer-title"></h3>
                 <div class="project-viewer-meta"></div>
                 <p class="project-viewer-description"></p>
@@ -508,8 +477,8 @@
       <section id="proof" class="proof-grid section">
         <article class="proof-panel panel reveal">
           <div class="section-heading">
-            <p class="panel-label">Testimonials</p>
-            <h2>What clients said;</h2>
+            <p class="panel-label" data-i18n="proof.label">Testimonials</p>
+            <h2 data-i18n="proof.title">What clients said;</h2>
           </div>
           <div class="testimonial-grid bounded-grid">
 
@@ -522,11 +491,11 @@
               <div class="testimonial-copy">
                 <div class="testimonial-pin-badge" aria-label="Featured testimonial">
                   <span class="testimonial-pin-icon" aria-hidden="true"></span>
-                  <strong>Featured</strong>
+                  <strong data-i18n="proof.featured">Featured</strong>
                 </div>
                 <h3>Sonder</h3>
-                <span>Client</span>
-                <p>
+                <span data-i18n="proof.client">Client</span>
+                <p data-i18n="testimonials.sonder">
                   "Neptune is a very proficient and reliable developer. 
                   His scripting was high-quality and made in a timely matter. 
                   He was very respectful and understanding enough to keep us updated 
@@ -543,8 +512,8 @@
               <img src="src/Fotos/kartz.png" alt="Profile photo of Kartz">
               <div>
                 <h3>Kartz</h3>
-                <span>Partner</span>
-                <p>
+                <span data-i18n="proof.partner">Partner</span>
+                <p data-i18n="testimonials.kartz">
                   "Neptune delivered an insanely polished system, 
                   fast and extremely well structured."
                 </p>
@@ -559,8 +528,8 @@
               <img src="src/Fotos/rodevs.png" alt="Profile photo of rodevs">
               <div>
                 <h3>Rodevs Client</h3>
-                <span>Client</span>
-                <p>"
+                <span data-i18n="proof.client">Client</span>
+                <p data-i18n="testimonials.rodevs1">"
                   Delieved the lines of code I needed quickly and at a reasonable price. 
                   As for his communication he does very well, friendly and easy to talk with, 
                   I recommend him to others."
@@ -576,8 +545,8 @@
               <img src="src/Fotos/raijin..png" alt="Profile photo of Raijin">
               <div>
                 <h3>Raijin</h3>
-                <span>Client</span>
-                <p>
+                <span data-i18n="proof.client">Client</span>
+                <p data-i18n="testimonials.raijin">
                   "Very good work, did the work pretty quickly even though 
                   he wasn't on his main setup/equipment."
                 </p>
@@ -592,8 +561,8 @@
               <img src="src/Fotos/society.png" alt="Profile photo of Society">
               <div>
                 <h3>Society</h3>
-                <span>Client</span>
-                <p>
+                <span data-i18n="proof.client">Client</span>
+                <p data-i18n="testimonials.society">
                   "Very good, quick stating hes not in his main work setup 
                   i would def recommend to new customers"
                 </p>
@@ -608,8 +577,8 @@
               <img src="src/Fotos/rodevs.png" alt="Profile photo of rodevs">
               <div>
                 <h3>Rodevs Client</h3>
-                <span>Client</span>
-                <p>
+                <span data-i18n="proof.client">Client</span>
+                <p data-i18n="testimonials.rodevs2">
                   "This scripter is very fast in completing tasks, 
                    but his value for money doesn't really work for me. Overall 9/10"
                 </p>
@@ -624,8 +593,8 @@
               <img src="src/Fotos/rodevs.png" alt="Profile photo of rodevs">
               <div>
                 <h3>Rodevs Client</h3>
-                <span>Client</span>
-                <p>"He works very fast and responds fast and professional"</p>
+                <span data-i18n="proof.client">Client</span>
+                <p data-i18n="testimonials.rodevs3">"He works very fast and responds fast and professional"</p>
               </div>
             </article>
             <article class="testimonial-card">
@@ -636,8 +605,8 @@
               <img src="src/Fotos/rodevs.png" alt="Profile photo of rodevs">
               <div>
                 <h3>Rodevs Client</h3>
-                <span>Client</span>
-                <p>
+                <span data-i18n="proof.client">Client</span>
+                <p data-i18n="testimonials.rodevs4">
                   "This dude really helped me out so much and is a AWESOME 
                   scripter i really do suggest getting work done by them!"
                 </p>
@@ -656,18 +625,18 @@
           </div>
           <div class="validation-body">
             <div class="section-heading">
-              <p class="panel-label">Certificates</p>
-              <h2>Courses and certificates;</h2>
+              <p class="panel-label" data-i18n="certificates.label">Certificates</p>
+              <h2 data-i18n="certificates.title">Courses and certificates;</h2>
             </div>
             <div class="certificate-grid bounded-grid bounded-grid-compact">
               <article class="certificate-card">
                 <img src="src/Fotos/harvard.png" alt="Harvard computer science certificate">
-                <p>Computer Science - Harvard</p>
+                <p data-i18n="certificates.harvard">Computer Science - Harvard</p>
               </article>
 
               <article class="certificate-card">
                 <img src="src/Fotos/PHub.png" alt="Programming Hub ethical hacking certificate">
-                <p>Ethical Hacking - Programmming Hub</p>
+                <p data-i18n="certificates.phub">Ethical Hacking - Programmming Hub</p>
               </article>
             </div>
           </div>
@@ -683,27 +652,80 @@
         </div>
         <div class="contact-body">
           <div class="contact-copy">
-              <p class="panel-label">Contact</p>
-            <h2>Need a website, system, or AI tool?</h2>
-            <p>Send the idea and the scope. If it makes sense, we can work on it.</p>
+              <p class="panel-label" data-i18n="contact.label">Contact</p>
+            <h2 data-i18n="contact.title">Need a website, system, or AI tool?</h2>
+            <p data-i18n="contact.text">Send the idea and the scope. If it makes sense, we can work on it.</p>
             <div class="contact-terminal">
               <p><span class="prompt">neptune@boot~$</span> ping new-idea</p>
-              <p class="typed-line">response :: checking new projects</p>
+              <p class="typed-line" data-i18n="contact.typed">response :: checking new projects</p>
             </div>
           </div>
 
             <div class="contact-links bounded-grid bounded-grid-compact">
-            <a href="https://github.com/NepTuneForever" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://nepdev.xyz" target="_blank" rel="noreferrer">Website</a>
-            <a href="https://discord.gg/kgPPkT78" target="_blank" rel="noreferrer">Discord Server</a>
+            <a href="https://github.com/NepTuneForever" target="_blank" rel="noreferrer" data-i18n="contact.github">GitHub</a>
+            <a href="https://nepdev.xyz" target="_blank" rel="noreferrer" data-i18n="contact.website">Website</a>
+            <a href="https://discord.gg/kgPPkT78" target="_blank" rel="noreferrer" data-i18n="contact.discord">Discord Server</a>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <p>© Neptune | 2026</p>
+      <p data-i18n="footer.copy">© Neptune | 2026</p>
     </footer>
+  </div>
+
+  <div class="overlay-modal" id="language-modal" hidden aria-hidden="true">
+    <div class="overlay-backdrop" data-modal-close="language-modal"></div>
+    <div class="overlay-dialog overlay-dialog-compact" role="dialog" aria-modal="true" aria-labelledby="language-modal-title" tabindex="-1">
+      <div class="overlay-copy">
+        <p class="panel-label" data-i18n="language.label">Language</p>
+        <h2 id="language-modal-title" data-i18n="language.title">Choose your language</h2>
+        <p data-i18n="language.text">Pick how you want to browse the site.</p>
+      </div>
+      <div class="language-options">
+        <button class="language-option" type="button" data-language-choice="en">English</button>
+        <button class="language-option" type="button" data-language-choice="pt">Português</button>
+        <button class="language-option" type="button" data-language-choice="fr">Français</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay-modal" id="profile-modal" hidden aria-hidden="true">
+    <div class="overlay-backdrop" data-modal-close="profile-modal"></div>
+    <div class="overlay-dialog" role="dialog" aria-modal="true" aria-labelledby="profile-modal-title" tabindex="-1">
+      <button class="overlay-close" type="button" data-modal-close="profile-modal" data-i18n="profile.close">close</button>
+      <div class="overlay-copy">
+        <p class="panel-label" data-i18n="profile.label">Personal Information</p>
+        <h2 id="profile-modal-title" data-i18n="profile.title">About me</h2>
+      </div>
+      <div class="profile-grid">
+        <div class="profile-row">
+          <span data-i18n="profile.nameLabel">Name</span>
+          <strong>Filipe Paredes Dias</strong>
+        </div>
+        <div class="profile-row">
+          <span data-i18n="profile.emailLabel">Contact email</span>
+          <strong><a href="mailto:filipeparedesdias14@gmail.com">filipeparedesdias14@gmail.com</a></strong>
+        </div>
+        <div class="profile-row">
+          <span data-i18n="profile.ageLabel">Age</span>
+          <strong>18</strong>
+        </div>
+        <div class="profile-row">
+          <span data-i18n="profile.studyLabel">Studying</span>
+          <strong data-i18n="profile.studyValue">Ciencias da Computação</strong>
+        </div>
+        <div class="profile-row profile-row-languages">
+          <span data-i18n="profile.languagesLabel">Languages I speak</span>
+          <div class="profile-language-list">
+            <strong data-i18n="profile.languagePortuguese">Portuguese: Native</strong>
+            <strong data-i18n="profile.languageEnglish">English: Fluent</strong>
+            <strong data-i18n="profile.languageFrench">French: Basic to intermediate</strong>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="src/Script/script.js"></script>
