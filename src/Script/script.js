@@ -12,7 +12,7 @@ const content = {
       "meta.title": "Neptune | Developer",
       "meta.description": "Fullstack developer and AI engineer",
       "intro.line1": '<span class="prompt">neptune@boot~$</span> initialize visual intro',
-      "intro.line2": '<span class="prompt">neptune@boot~$</span> staging interface layers...',
+      "intro.line2": '<span class="prompt">neptune@boot~$</span> loading interfaces layers',
       "intro.line3": '<span class="prompt">neptune@boot~$</span> syncing product cases',
       "intro.line4": '<span class="prompt">neptune@boot~$</span> routing videos',
       "intro.line5": '<span class="prompt">neptune@boot~$</span> mounting fullstack stack',
@@ -58,6 +58,8 @@ const content = {
       "stack.title": "Tech Stacks;",
       "projects.label": "Indexed Projects",
       "projects.title": "Some of the projects I have worked on;",
+      "projects.filterShow": "Show Roblox only",
+      "projects.filterHide": "Show all projects",
       "viewer.label": "Project Playback",
       "viewer.play": "play",
       "viewer.pause": "pause",
@@ -225,6 +227,8 @@ const content = {
       "stack.title": "Stacks Tecnicas;",
       "projects.label": "Projetos Indexados",
       "projects.title": "Alguns dos projetos em que trabalhei;",
+      "projects.filterShow": "Mostrar apenas Roblox",
+      "projects.filterHide": "Mostrar todos os projetos",
       "viewer.label": "Exibicao do Projeto",
       "viewer.play": "play",
       "viewer.pause": "pausar",
@@ -392,6 +396,8 @@ const content = {
       "stack.title": "Stacks Techniques;",
       "projects.label": "Projets Indexes",
       "projects.title": "Quelques projets sur lesquels j ai travaille;",
+      "projects.filterShow": "Afficher Roblox uniquement",
+      "projects.filterHide": "Afficher tous les projets",
       "viewer.label": "Lecture du Projet",
       "viewer.play": "lecture",
       "viewer.pause": "pause",
@@ -542,6 +548,10 @@ const navLinks = [...document.querySelectorAll(".top-nav a")];
 const revealItems = document.querySelectorAll(".reveal");
 const trackedSections = [...document.querySelectorAll("main section[id]")];
 const projectCards = [...document.querySelectorAll(".project-card")];
+const projectsGrid = document.querySelector(".projects-grid");
+const robloxFilterToggle = document.querySelector("#roblox-filter-toggle");
+const robloxFilterLabel = robloxFilterToggle?.querySelector(".roblox-filter-label");
+let robloxFilterActive = false;
 const projectViewer = document.querySelector(".project-viewer");
 const projectViewerDialog = document.querySelector(".project-viewer-dialog");
 const projectViewerTitle = document.querySelector("#project-viewer-title");
@@ -807,6 +817,14 @@ function applyStaticTranslations() {
   });
 }
 
+function syncRobloxFilterLabel() {
+  if (!robloxFilterToggle || !robloxFilterLabel) return;
+  robloxFilterLabel.textContent = translateString(
+    robloxFilterActive ? "projects.filterHide" : "projects.filterShow"
+  );
+  robloxFilterToggle.setAttribute("aria-pressed", String(robloxFilterActive));
+}
+
 function syncLanguageButtons() {
   languageButtons.forEach((button) => {
     const selected = button.dataset.languageChoice === currentLanguage.value;
@@ -819,6 +837,7 @@ function applyTranslations() {
   applyStaticTranslations();
   renderProjects();
   syncLanguageButtons();
+  syncRobloxFilterLabel();
   syncPlayerToggleLabel();
   syncFullscreenLabel();
 
@@ -874,6 +893,14 @@ window.addEventListener(
   },
   { passive: true }
 );
+
+if (robloxFilterToggle && projectsGrid) {
+  robloxFilterToggle.addEventListener("click", () => {
+    robloxFilterActive = !robloxFilterActive;
+    projectsGrid.classList.toggle("roblox-filter-active", robloxFilterActive);
+    syncRobloxFilterLabel();
+  });
+}
 
 if (toggle) {
   toggle.addEventListener("click", () => {
